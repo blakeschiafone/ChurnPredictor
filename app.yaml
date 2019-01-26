@@ -1,0 +1,81 @@
+runtime: custom
+env: flex
+
+env_variables:
+  GCS_AUTH_FILE: tndevel_auth.json
+  
+service: churnpredictor
+
+automatic_scaling:
+  max_num_instances: 1
+
+resources:
+  cpu: 8.0
+  disk_size_gb: 64
+  memory_gb: 50
+
+inbound_services:
+- warmup
+
+health_check:
+  enable_health_check: False
+
+skip_files:
+- ^(.*/)?#.*#
+- ^(.*/)?.*~
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?.*\.[pm]o
+- ^(.*/)?.*/RCS/.*
+- ^(.*/)?\..*
+- ^(.*/)?.*\.bak$
+- ^(.*/)?\.svn.*$
+- ^\.sass-cache/.*
+- ^images/.*
+- ^ui/.*
+- ^resources/.*
+- ^static/.*
+- ^tmp/.*
+- ^\.git.*
+- ^\.gaedata.*
+- ^\.idea.*
+- ^ks\.py.*
+- ^kahuna-cov\.xml
+- ^secrets/.*
+- ^selenium.*
+- ^node_modules/.*
+- ^integration/.*
+- ^api-tests/.*
+- ^kahuna/test/.*
+- ^kahuna_test/.*
+- ^kahuna/tracker/.*
+- ^kahuna/state/.*
+- ^kahuna/sms/.*
+- ^kahuna/settings/.*
+- ^kahuna/safe_utils/.*
+- ^kahuna/redis/.*
+- ^kahuna/program/.*
+- ^kahuna/optimal_path/.*
+- ^kahuna/models/.*
+- ^kahuna/metrics/.*
+- ^kahuna/messenger/.*
+- ^kahuna/log/.*
+- ^kahuna/language/.*
+- ^kahuna/imports/.*
+- ^kahuna/getstarted/.*
+- ^kahuna/frontend/.*
+- ^kahuna/facebook/.*
+- ^kahuna/extensions/.*
+- ^kahuna/exports/.*
+- ^kahuna/email/.*
+- ^kahuna/counter/.*
+- ^kahuna/common/.*
+- ^kahuna/cohort/.*
+- ^kahuna/checks/.*
+- ^kahuna/campaign/.*
+- ^kahuna/cache/.*
+- ^kahuna/bigquery/.*
+- ^kahuna/apis/.*
+- ^kahuna/analytics/.*
+- ^kahuna/analysis/.*
+- ^kahuna/oauth/.*
+- ^lib/freezegun/.*
